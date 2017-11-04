@@ -8,6 +8,8 @@ public class Main extends SimpleApplication {
 		super(new VisualAppState(),
 				new ControlAppState(),
 				new InvadersAIAppState(),
+				new BulletAppState(),
+				new DecayAppState(),
 				new GameAppState(),
 				new EntityDataState());
 	}

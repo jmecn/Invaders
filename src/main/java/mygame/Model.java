@@ -6,6 +6,7 @@ public class Model implements EntityComponent {
     private final String name;
     public final static String SpaceShip = "SpaceShip";
     public final static String BasicInvader = "BasicInvader";
+    public final static String Bullet = "Bullet";
 
     public Model(String name) {
         this.name = name;
