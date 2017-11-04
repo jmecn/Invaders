@@ -1,19 +1,21 @@
 package mygame;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
 import com.jme3.app.Application;
 import com.jme3.app.SimpleApplication;
 import com.jme3.app.state.AbstractAppState;
 import com.jme3.app.state.AppStateManager;
 import com.jme3.light.DirectionalLight;
+import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Spatial;
 import com.simsilica.es.Entity;
 import com.simsilica.es.EntityData;
 import com.simsilica.es.EntityId;
 import com.simsilica.es.EntitySet;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
 
 public class VisualAppState extends AbstractAppState {
     private SimpleApplication app;
@@ -89,6 +91,11 @@ public class VisualAppState extends AbstractAppState {
     private void updateModelSpatial(Entity e, Spatial s) {
         Position p = e.get(Position.class);
         s.setLocalTranslation(p.getLocation());
+        float angles[] = new float[3];
+        angles[0] = p.getRotation().x;
+        angles[1] = p.getRotation().y;
+        angles[2] = p.getRotation().z;
+        s.setLocalRotation(new Quaternion(angles));
     }
 
     private Spatial createVisual(Entity e) {

@@ -6,6 +6,8 @@ public class Main extends SimpleApplication {
 	
 	public Main() {
 		super(new VisualAppState(),
+				new ControlAppState(),
+				new InvadersAIAppState(),
 				new GameAppState(),
 				new EntityDataState());
 	}
