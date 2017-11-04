@@ -6,10 +6,11 @@ public class Main extends SimpleApplication {
 	
 	public Main() {
 		super(new VisualAppState(),
+				new DecayAppState(),
 				new ControlAppState(),
 				new InvadersAIAppState(),
+				new CollisionAppState(),
 				new BulletAppState(),
-				new DecayAppState(),
 				new GameAppState(),
 				new EntityDataState());
 	}

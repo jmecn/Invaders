@@ -75,6 +75,8 @@ public class ControlAppState extends AbstractAppState {
                 EntityId bullet = ed.createEntity();
                 ed.setComponents(bullet,
                         new Model(Model.Bullet),
+                        new Attack(1),
+                        new CollisionShape(0.25f),
                         new Position(new Vector3f(shipLocation.getX(), shipLocation.getY() + 3.5f, 0)),
                         new Speed(20),
                         new Decay(2000));

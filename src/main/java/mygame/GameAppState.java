@@ -33,6 +33,8 @@ public class GameAppState extends AbstractAppState {
             for (int y = 0; y < 20; y += 4) {
                 EntityId invader = ed.createEntity();
                 this.ed.setComponents(invader,
+                		new Defense(2),
+                		new CollisionShape(1),
                         new Position(new Vector3f(x, y, 0)),
                         new Model(Model.BasicInvader));
             }
