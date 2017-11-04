@@ -4,6 +4,7 @@ import com.jme3.app.Application;
 import com.jme3.app.SimpleApplication;
 import com.jme3.app.state.AbstractAppState;
 import com.jme3.app.state.AppStateManager;
+import com.jme3.math.Vector3f;
 import com.simsilica.es.Entity;
 import com.simsilica.es.EntityData;
 import com.simsilica.es.EntitySet;
@@ -43,6 +44,12 @@ public class CollisionAppState extends AbstractAppState {
                     }
                     if (defendingPart.get(Defense.class).getPower() <= 0) {
                         ed.removeEntity(defendingPart.getId());
+                        
+                        Vector3f location = defendingPart.get(Position.class).getLocation();
+                        ed.setComponents(ed.createEntity(),
+                                new Die(),
+                                new Decay(1000),
+                                new Position(location, Vector3f.ZERO));
                     }
                 }
             });
